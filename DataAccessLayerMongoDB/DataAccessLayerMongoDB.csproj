@@ -63,7 +63,7 @@
     <Compile Include="Repositories\TagRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataAccessLayerInterfacesa\DataAccessLayerInterfaces.csproj">
+    <ProjectReference Include="..\DataAccessLayerInterfaces\DataAccessLayerInterfaces.csproj">
       <Project>{74047365-3122-4811-826a-c39f6c306762}</Project>
       <Name>DataAccessLayerInterfaces</Name>
     </ProjectReference>

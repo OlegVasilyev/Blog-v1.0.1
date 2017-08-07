@@ -1,12 +1,9 @@
 ﻿using AutoMapper;
-using BusinessLogicLayer.DataTransferObjects;
-using BusinessLogicLayer.Interfaces;
-using EpamBlog.Models;
+using BusinessLogicLayerInterfaces.DataTransferObjects;
+using BusinessLogicLayerInterfaces.Interfaces;
 using EpamBlog.ViewModels;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace EpamBlog.Controllers

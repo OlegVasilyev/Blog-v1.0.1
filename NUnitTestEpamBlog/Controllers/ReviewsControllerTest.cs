@@ -2,9 +2,9 @@
 using System.Web.Mvc;
 using Moq;
 using NUnit.Framework;
-using BusinessLogicLayer.Interfaces;
-using BusinessLogicLayer.DataTransferObjects;
 using EpamBlog.Controllers;
+using BusinessLogicLayerInterfaces.Interfaces;
+using BusinessLogicLayerInterfaces.DataTransferObjects;
 
 namespace NUnitTestEpamBlog.Controllers
 {

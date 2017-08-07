@@ -47,21 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataTransferObjects\AnswerDTO.cs" />
-    <Compile Include="DataTransferObjects\ArticleDTO.cs" />
-    <Compile Include="DataTransferObjects\CommentDTO.cs" />
-    <Compile Include="DataTransferObjects\ReviewDTO.cs" />
-    <Compile Include="DataTransferObjects\QuizDTO.cs" />
     <Compile Include="Infrastructure\MapperConfig.cs" />
-    <Compile Include="Infrastructure\ServiceBlogModul.cs" />
-    <Compile Include="Infrastructure\ValidationException.cs" />
-    <Compile Include="Infrastructure\ValidatorBlogModels.cs" />
-    <Compile Include="Interfaces\IAnswerService.cs" />
-    <Compile Include="Interfaces\IArticleService.cs" />
-    <Compile Include="Interfaces\ICommentService.cs" />
-    <Compile Include="Interfaces\IQuizService.cs" />
-    <Compile Include="Interfaces\IReviewService.cs" />
-    <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AnswerService.cs" />
     <Compile Include="Services\ArticleService.cs" />
@@ -77,17 +63,21 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\DataAccessLayerInterfacesa\DataAccessLayerInterfaces.csproj">
+    <ProjectReference Include="..\BusinessLogicLayerInterfaces\BusinessLogicLayerInterfaces.csproj">
+      <Project>{8cafa261-96c9-4ed1-9e37-36d92ca8f8af}</Project>
+      <Name>BusinessLogicLayerInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccessLayerInterfaces\DataAccessLayerInterfaces.csproj">
       <Project>{74047365-3122-4811-826a-c39f6c306762}</Project>
       <Name>DataAccessLayerInterfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataAccessLayer\DataAccessLayerSQL.csproj">
-      <Project>{F62F851C-FB90-4455-B97E-F4809D2F3681}</Project>
-      <Name>DataAccessLayerSQL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{a8503d74-8d6c-486a-8dd2-b7b32e19cac8}</Project>
       <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ValidationLayer\ValidationLayer.csproj">
+      <Project>{ce33fdce-1dd1-4e74-b5aa-7d9c543237fb}</Project>
+      <Name>ValidationLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

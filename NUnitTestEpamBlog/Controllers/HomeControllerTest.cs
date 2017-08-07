@@ -1,14 +1,10 @@
-﻿using BusinessLogicLayer.DataTransferObjects;
-using BusinessLogicLayer.Interfaces;
+﻿using BusinessLogicLayerInterfaces.DataTransferObjects;
+using BusinessLogicLayerInterfaces.Interfaces;
 using EpamBlog.Controllers;
 using Moq;
 using NUnit.Framework;
 using NUnitTestEpamBlog.Tests;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace NUnitTestEpamBlog.Controllers

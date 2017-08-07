@@ -4,12 +4,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NUnitTestDataAccessLayerSQL.TestData
 {
-    class ArticleDataTest
+    public class ArticleDataTest
     {
         static List<Tagg> tags = new List<Tagg>()
             {
@@ -42,8 +40,6 @@ namespace NUnitTestDataAccessLayerSQL.TestData
                     Tags =  new List<Tagg> { tags[1] }
 
                  }
-
-                
                 }.AsQueryable());
 
             }

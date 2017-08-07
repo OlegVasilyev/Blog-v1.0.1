@@ -1,11 +1,7 @@
-﻿using DataAccessLayerInterfaces.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using Entities.Models;
 using DataAccessLayerMongoDB.Context;
+using DataAccessLayerInterfaces.Repository;
 
 namespace DataAccessLayerMongoDB.Repositories
 {

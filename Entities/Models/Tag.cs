@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 
 namespace Entities.Models
 {
-    public class Tagg : EntityIdBlog
+    public class Tagg : IdEntity
     {
         public string Text { get; set; }
         public virtual ICollection<Article>  Articles { get; set; }

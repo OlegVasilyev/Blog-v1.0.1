@@ -4,12 +4,9 @@ using Entities.Models;
 using Moq;
 using NUnit.Framework;
 using NUnitTestDataAccessLayerSQL.TestData;
-using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NUnitTestDataAccessLayerSQL.Repositories
 {
@@ -31,7 +28,25 @@ namespace NUnitTestDataAccessLayerSQL.Repositories
             var repository = new ArticleRepository(mock.Object);
             var result = repository.GetAll();
 
-            Assert.That(result, Is.TypeOf(typeof(List<Article>)));
+            Assert.That(result, Is.TypeOf(typeof(IEnumerable<Article>)));
+        }
+        [Test]
+        public void GetReturnsArticleOnCorrectId()
+        {
+            //Arrange
+            var mockSet = new Mock<DbSet<Article>>();
+
+            mockSet.Setup(a => a.Find(It.IsAny<int>())).Returns(new Article());
+
+            var mock = new Mock<BlogContext>();
+            mock.Setup(a => a.Articles).Returns(mockSet.Object);
+
+            //Act
+            var repository = new ArticleRepository(mock.Object);
+            var result = repository.Get(1);
+
+            //Assert
+            Assert.That(result, Is.TypeOf(typeof(Article)));
         }
 
     }

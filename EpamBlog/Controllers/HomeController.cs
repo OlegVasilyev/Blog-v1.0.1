@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using BusinessLogicLayer.Interfaces;
-using AutoMapper;
-using EpamBlog.Models;
 using BusinessLogicLayer.Infrastructure;
-using BusinessLogicLayer.DataTransferObjects;
 using EpamBlog.ViewModels;
+using ValidationLayer.Infrastructure;
+using BusinessLogicLayerInterfaces.Interfaces;
 
 namespace EpamBlog.Controllers
 {

@@ -203,7 +203,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\HtmlText.cs" />
-    <Compile Include="Util\MapperConfigWeb.cs" />
+    <Compile Include="Infrastructure\MapperConfigWeb.cs" />
+    <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
     <Compile Include="ViewModels\Answer.cs" />
     <Compile Include="ViewModels\Article.cs" />
     <Compile Include="Models\LoginModel.cs" />
@@ -212,7 +213,6 @@
     <Compile Include="ViewModels\Review.cs" />
     <Compile Include="ViewModels\SearchByTag.cs" />
     <Compile Include="ViewModels\Quiz.cs" />
-    <Compile Include="Util\NinjectDependencyResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -360,9 +360,17 @@
       <Project>{c83ee43b-8c46-4194-816b-91ee811a5c73}</Project>
       <Name>AuthenticationLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
-      <Project>{ab5e1eb8-9757-4359-a55c-0a27da174dfc}</Project>
-      <Name>BusinessLogicLayer</Name>
+    <ProjectReference Include="..\BusinessLogicLayerInterfaces\BusinessLogicLayerInterfaces.csproj">
+      <Project>{8cafa261-96c9-4ed1-9e37-36d92ca8f8af}</Project>
+      <Name>BusinessLogicLayerInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DependencyResolver\DependencyResolver.csproj">
+      <Project>{03163024-81ef-4d32-9704-8312e9f5f487}</Project>
+      <Name>DependencyResolver</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ValidationLayer\ValidationLayer.csproj">
+      <Project>{ce33fdce-1dd1-4e74-b5aa-7d9c543237fb}</Project>
+      <Name>ValidationLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

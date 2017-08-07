@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Web;
+﻿using System.Configuration;
 using MongoDB.Driver;
 using Entities.Models;
-using DataAccessLayerInterfaces.Interfaces;
 
 namespace DataAccessLayerMongoDB.Context
 {

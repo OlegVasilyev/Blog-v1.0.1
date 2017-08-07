@@ -67,7 +67,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataAccessLayer\DataAccessLayerSQL.csproj">
+    <ProjectReference Include="..\DataAccessLayerSQL\DataAccessLayerSQL.csproj">
       <Project>{f62f851c-fb90-4455-b97e-f4809d2f3681}</Project>
       <Name>DataAccessLayerSQL</Name>
     </ProjectReference>

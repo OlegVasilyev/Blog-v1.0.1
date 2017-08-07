@@ -1,14 +1,12 @@
-﻿using BusinessLogicLayer.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BusinessLogicLayer.DataTransferObjects;
-using DataAccessLayerInterfaces.Interfaces;
 using BusinessLogicLayer.Infrastructure;
-using AutoMapper;
 using Entities.Models;
+using BusinessLogicLayerInterfaces.Interfaces;
+using BusinessLogicLayerInterfaces.DataTransferObjects;
+using DataAccessLayerInterfaces.Repository;
+using ValidationLayer.Infrastructure;
 
 namespace BusinessLogicLayer.Service
 {

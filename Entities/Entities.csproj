@@ -53,7 +53,7 @@
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\Comment.cs" />
-    <Compile Include="Models\EntityIdBlog.cs" />
+    <Compile Include="Models\IEntity.cs" />
     <Compile Include="Models\Review.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\Quiz.cs" />

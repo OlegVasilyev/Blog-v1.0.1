@@ -4,10 +4,6 @@ using AuthenticationLayer.DAL.Interfaces;
 using Entities.IdentityEnties;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AuthenticationLayer.DAL.Repositories
 {

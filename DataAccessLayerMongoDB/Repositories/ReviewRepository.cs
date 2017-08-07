@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MongoDB.Driver;
 using MongoDB.Bson;
 using Entities.Models;
-using DataAccessLayerInterfaces.Interfaces;
 using DataAccessLayerMongoDB.Context;
-using MongoDB.Driver.Linq;
-using System.Collections;
+using DataAccessLayerInterfaces.Repository;
 
 namespace DataAccessLayerMongoDB.Repositories
 {

@@ -61,21 +61,25 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BusinessLogicLayerInterfaces\BusinessLogicLayerInterfaces.csproj">
+      <Project>{8cafa261-96c9-4ed1-9e37-36d92ca8f8af}</Project>
+      <Name>BusinessLogicLayerInterfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
       <Project>{ab5e1eb8-9757-4359-a55c-0a27da174dfc}</Project>
       <Name>BusinessLogicLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataAccessLayerInterfacesa\DataAccessLayerInterfaces.csproj">
+    <ProjectReference Include="..\DataAccessLayerInterfaces\DataAccessLayerInterfaces.csproj">
       <Project>{74047365-3122-4811-826a-c39f6c306762}</Project>
       <Name>DataAccessLayerInterfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataAccessLayer\DataAccessLayerSQL.csproj">
-      <Project>{f62f851c-fb90-4455-b97e-f4809d2f3681}</Project>
-      <Name>DataAccessLayerSQL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{a8503d74-8d6c-486a-8dd2-b7b32e19cac8}</Project>
       <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ValidationLayer\ValidationLayer.csproj">
+      <Project>{ce33fdce-1dd1-4e74-b5aa-7d9c543237fb}</Project>
+      <Name>ValidationLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using BusinessLogicLayer.DataTransferObjects;
+using BusinessLogicLayerInterfaces.DataTransferObjects;
 using Entities.Models;
 
 namespace BusinessLogicLayer.Infrastructure

@@ -4,10 +4,7 @@ using Ninject;
 using Ninject.Modules;
 using Ninject.Web.Common;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using BusinessLogicLayer.Infrastructure;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(NinjectWebCommon), "Stop")]
@@ -43,8 +40,7 @@ namespace EpamBlog.App_Start
         private static IKernel CreateKernel()
         {
             // set connection string
-            var modules = new INinjectModule[] { new ServiceBlogModul("BlogContext") };
-            var kernel = new StandardKernel(modules);
+            var kernel = new StandardKernel();
 
             try
             {

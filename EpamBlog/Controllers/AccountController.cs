@@ -2,15 +2,11 @@
 using AuthenticationLayer.BLL.Interfaces;
 using EpamBlog.Models;
 using Microsoft.Owin.Security;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Host.SystemWeb;
 using AuthenticationLayer.BLL.DTO;
 
 namespace EpamBlog.Controllers

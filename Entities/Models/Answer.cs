@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-
-namespace Entities.Models
+﻿namespace Entities.Models
 {
-    public class Answer : EntityIdBlog
+    public class Answer : IdEntity
     {
         public int QuestionId { get; set; }
         public string  Text { get; set; }

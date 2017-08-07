@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Security.Claims;
 using Microsoft.AspNet.Identity;
-using NLog;
 using AuthenticationLayer.BLL.Interfaces;
 using AuthenticationLayer.BLL.Infrastructure;
 using Entities.IdentityEnties;

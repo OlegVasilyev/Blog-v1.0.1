@@ -1,12 +1,13 @@
-﻿using BusinessLogicLayer.DataTransferObjects;
-using BusinessLogicLayer.Infrastructure;
+﻿using BusinessLogicLayer.Infrastructure;
 using BusinessLogicLayer.Service;
-using DataAccessLayerInterfaces.Interfaces;
+using BusinessLogicLayerInterfaces.DataTransferObjects;
+using DataAccessLayerInterfaces.Repository;
 using Entities.Models;
 using Moq;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using ValidationLayer.Infrastructure;
 
 namespace UnitTestBusinessLoginLayer.Services
 {

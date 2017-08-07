@@ -100,6 +100,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BusinessLogicLayerInterfaces\BusinessLogicLayerInterfaces.csproj">
+      <Project>{8cafa261-96c9-4ed1-9e37-36d92ca8f8af}</Project>
+      <Name>BusinessLogicLayerInterfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
       <Project>{ab5e1eb8-9757-4359-a55c-0a27da174dfc}</Project>
       <Name>BusinessLogicLayer</Name>

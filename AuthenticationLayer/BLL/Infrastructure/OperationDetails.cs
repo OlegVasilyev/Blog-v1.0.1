@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AuthenticationLayer.BLL.Infrastructure
+﻿namespace AuthenticationLayer.BLL.Infrastructure
 {
     /// <summary>
     /// Objects of this class are returned by IUserService methods for interaction with presentation layer 

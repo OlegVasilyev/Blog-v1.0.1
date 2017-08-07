@@ -1,11 +1,6 @@
 ﻿using AuthenticationLayer.DAL.Context;
 using AuthenticationLayer.DAL.Interfaces;
 using Entities.IdentityEnties;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AuthenticationLayer.DAL.Repositories
 {
