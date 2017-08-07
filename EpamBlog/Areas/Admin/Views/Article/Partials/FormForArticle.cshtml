@@ -5,7 +5,7 @@
     <div class="row">
         <div class="input-field col s10 push-s1">
             @Html.LabelFor(model => model.Name, "Article title")
-            <input class="text-box single-line" id="article_title" name="Title" required="required" type="text">
+            <input class="text-box single-line" id="article_name" name="Name" required="required" type="text">
             @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
         </div>
         <div class="input-field col s10 push-s1">
@@ -17,7 +17,7 @@
         <div class="input-field col s10 push-s1">
             @Html.LabelFor(model => model.Tags, "Add tags here (separate it by whitespaces):")
             <input class="text-box single-line" id="tags" name="Tags" type="text">
-            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            @Html.ValidationMessageFor(model => model.Tags, "", new { @class = "text-danger" })
         </div>
         <div class="input-field col s10 push-s1">
             <input type="submit" value="Send" class="btn btn-default" />

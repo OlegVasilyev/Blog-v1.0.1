@@ -226,9 +226,12 @@
     <Content Include="Content\Images\4.jpg" />
     <Content Include="Content\Images\article-image.png" />
     <Content Include="Content\Images\back-image.jpg" />
+    <Content Include="Content\Images\article-logo.png" />
     <Content Include="Content\Images\epam-company.jpg" />
     <Content Include="Content\Images\header-logo.png" />
+    <Content Include="Content\Images\review-logo.png" />
     <Content Include="Content\Images\top.png" />
+    <Content Include="Content\Images\user-logo.png" />
     <Content Include="Content\jquery.ui.base.css" />
     <Content Include="Content\jquery.ui.theme.css" />
     <Content Include="Content\Modal.css" />

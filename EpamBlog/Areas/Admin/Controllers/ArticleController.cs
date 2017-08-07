@@ -14,17 +14,22 @@ namespace EpamBlog.Areas.Admin.Controllers
     [Authorize(Roles = "admin")]
     public class ArticleController : Controller
     {
-        readonly IArticleService _blogService;
+        readonly IArticleService _articleService;
         public ArticleController(IArticleService service)
         {
-            _blogService = service;
+            _articleService = service;
         }
 
         [HttpGet]
         public ActionResult Index()
         {
-            var mapper = MapperConfigWeb.GetConfigFromDTO().CreateMapper();
-            return View(mapper.Map<IEnumerable<Article>>(_blogService.GetArticles()));
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<ArticleDTO, Article>().ForMember(c => c.Comments, i => i.Ignore());
+            });
+            var mapper = config.CreateMapper();
+
+            return View(mapper.Map<IEnumerable<Article>>(_articleService.GetArticles()));
         }
 
         [HttpPost]
@@ -32,11 +37,11 @@ namespace EpamBlog.Areas.Admin.Controllers
         {
             var configView = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<ArticleDTO, Article>();
+                cfg.CreateMap<ArticleDTO, Article>().ForMember(c => c.Comments, i => i.Ignore());
             });
             var configDto = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<ArticleDTO, Article>();
+                cfg.CreateMap<ArticleDTO, Article>().ForMember(c => c.Comments, i => i.Ignore());
             });
             var mapper = configDto.CreateMapper();
 
@@ -55,7 +60,7 @@ namespace EpamBlog.Areas.Admin.Controllers
                     }
                 }
                 var articleDto = mapper.Map<ArticleDTO>(article);
-                _blogService.CreateArticle(articleDto);
+                _articleService.CreateArticle(articleDto);
             }
             catch (ValidationException ex)
             {
@@ -63,7 +68,7 @@ namespace EpamBlog.Areas.Admin.Controllers
             }
 
             mapper = configView.CreateMapper();
-            var model = mapper.Map<IEnumerable<Article>>(_blogService.GetArticles());
+            var model = mapper.Map<IEnumerable<Article>>(_articleService.GetArticles());
             return PartialView("Partials/ArticleList", model);
         }
 
@@ -76,14 +81,14 @@ namespace EpamBlog.Areas.Admin.Controllers
             }
             try
             {
-                _blogService.DeleteArticle(id);
+                _articleService.DeleteArticle(id);
                 var config = new MapperConfiguration(cfg =>
                 {
                     cfg.CreateMap<ArticleDTO, Article>();
                 });
                 var mapper = config.CreateMapper();
                 return PartialView("Partials/ArticleList",
-                    mapper.Map<IEnumerable<Article>>(_blogService.GetArticles()));
+                    mapper.Map<IEnumerable<Article>>(_articleService.GetArticles()));
             }
             catch (ValidationException ex)
             {
