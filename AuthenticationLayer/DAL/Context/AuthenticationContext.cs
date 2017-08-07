@@ -9,7 +9,10 @@ namespace AuthenticationLayer.DAL.Context
     /// </summary>
     public class AuthenticationContext : IdentityDbContext<ApplicationUser>
     {
-
+        static AuthenticationContext()
+        {
+            Database.SetInitializer(new AuthenticationDbInitializer());
+        }
         public AuthenticationContext(string connectionString) : base(connectionString)
         {
         }

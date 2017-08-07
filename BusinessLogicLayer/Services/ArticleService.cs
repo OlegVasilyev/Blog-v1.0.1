@@ -17,13 +17,12 @@ namespace BusinessLogicLayer.Service
         {
             this.DataBase = database;
         }
-
         public void CreateArticle(ArticleDTO articleDto)
         {
             ValidatorBlogModels.ValidateArticleModel(articleDto);
             Mapper.Initialize(config =>
             {
-                config.CreateMap<ArticleDTO, Article>().ForMember(t => t.Tags, i => i.Ignore());
+                config.CreateMap<ArticleDTO, Article>().ForMember(t => t.Tags, i => i.Ignore()).ForMember(c=>c.Comments, i=>i.Ignore());
             });
             var articl = Mapper.Map<Article>(articleDto);
             var tags = DataBase.Tags.GetAll().ToList();

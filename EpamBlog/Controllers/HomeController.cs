@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using BusinessLogicLayer.Infrastructure;
 using EpamBlog.ViewModels;
 using ValidationLayer.Infrastructure;
 using BusinessLogicLayerInterfaces.Interfaces;
+using EpamBlog.Infrastructure;
 
 namespace EpamBlog.Controllers
 {

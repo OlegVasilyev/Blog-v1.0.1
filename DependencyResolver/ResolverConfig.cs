@@ -16,8 +16,7 @@ namespace DependencyResolver
         {
             //repository
             kernel.Bind<DbContext>().To<BlogContext>().InRequestScope();
-            kernel.Bind<DbContext>().To<BlogContext>().InRequestScope();
-            kernel.Bind<IBlogRepository>().To<BlogRepositories>().InRequestScope();
+            kernel.Bind<IBlogRepository>().To<BlogRepositories>();
             //service 
             kernel.Bind<IArticleService>().To<ArticleService>();
             kernel.Bind<ICommentService>().To<CommentService>();

@@ -39,7 +39,7 @@ namespace EpamBlog.App_Start
         /// <returns>The created kernel.</returns>
         private static IKernel CreateKernel()
         {
-            // set connection string
+
             var kernel = new StandardKernel();
 
             try
