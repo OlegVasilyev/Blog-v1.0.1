@@ -10,9 +10,21 @@ namespace AuthenticationLayer.DAL.Interfaces
     /// </summary>
     public interface IBlogAuth : IDisposable
     {
+        /// <summary>
+        /// Access to class with user management
+        /// </summary>
         ApplicationUserManager UserManager { get; }
+
+        /// <summary>
+        /// Access to class with user's client profiles management
+        /// </summary>
         IClientManager ClientManager { get; }
+
+        /// <summary>
+        /// Access to class with roles management
+        /// </summary>
         ApplicationRoleManager RoleManager { get; }
+
         void Save();
     }
 }

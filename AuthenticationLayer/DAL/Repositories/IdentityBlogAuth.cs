@@ -1,9 +1,10 @@
-﻿using AuthenticationLayer.DAL.Context;
-using AuthenticationLayer.DAL.Identity;
-using AuthenticationLayer.DAL.Interfaces;
-using Entities.IdentityEnties;
+﻿using System;
 using Microsoft.AspNet.Identity.EntityFramework;
-using System;
+using AuthenticationLayer.DAL.Interfaces;
+using AuthenticationLayer.DAL.Context;
+using Entities.IdentityEnties;
+using AuthenticationLayer.DAL.Identity;
+using AuthenticationLayer.DAL.Repositories;
 
 namespace AuthenticationLayer.DAL.Repositories
 {
@@ -11,23 +12,19 @@ namespace AuthenticationLayer.DAL.Repositories
     {
         private readonly AuthenticationContext _db;
 
-        private readonly ApplicationUserManager userManager;
-        private readonly ApplicationRoleManager roleManager;
-        private readonly IClientManager clientManager;
-
         public IdentityBlogAuth(string connectionString)
         {
             _db = new AuthenticationContext(connectionString);
-            userManager = new ApplicationUserManager(new UserStore<ApplicationUser>(_db));
-            roleManager = new ApplicationRoleManager(new RoleStore<ApplicationRole>(_db));
-            clientManager = new ClientManager(_db);
+            UserManager = new ApplicationUserManager(new UserStore<ApplicationUser>(_db));
+            RoleManager = new ApplicationRoleManager(new RoleStore<ApplicationRole>(_db));
+            ClientManager = new ClientManager(_db);
         }
 
-        public ApplicationUserManager UserManager => userManager;
+        public ApplicationUserManager UserManager { get; }
 
-        public IClientManager ClientManager => clientManager;
+        public IClientManager ClientManager { get; }
 
-        public ApplicationRoleManager RoleManager => roleManager;
+        public ApplicationRoleManager RoleManager { get; }
 
         public void Save()
         {
@@ -37,6 +34,7 @@ namespace AuthenticationLayer.DAL.Repositories
         public void Dispose()
         {
             Dispose(true);
+            //All unmanaged resources was disposed so GC needn't to call finalize method
             GC.SuppressFinalize(this);
         }
         private bool _disposed;
@@ -47,9 +45,10 @@ namespace AuthenticationLayer.DAL.Repositories
             {
                 if (disposing)
                 {
-                    userManager.Dispose();
-                    roleManager.Dispose();
-                    clientManager.Dispose();
+                    // Frees resources
+                    UserManager.Dispose();
+                    RoleManager.Dispose();
+                    ClientManager.Dispose();
                 }
                 _disposed = true;
             }

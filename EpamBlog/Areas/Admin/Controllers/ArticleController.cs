@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using ValidationLayer.Infrastructure;
+using EpamBlog.Infrastructure;
 
 namespace EpamBlog.Areas.Admin.Controllers
 {
@@ -22,11 +23,7 @@ namespace EpamBlog.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            var config = new MapperConfiguration(cfg =>
-            {
-                cfg.CreateMap<ArticleDTO, Article>();
-            });
-            var mapper = config.CreateMapper();
+            var mapper = MapperConfigWeb.GetConfigFromDTO().CreateMapper();
             return View(mapper.Map<IEnumerable<Article>>(_blogService.GetArticles()));
         }
 
@@ -85,7 +82,7 @@ namespace EpamBlog.Areas.Admin.Controllers
                     cfg.CreateMap<ArticleDTO, Article>();
                 });
                 var mapper = config.CreateMapper();
-                return PartialView("Partials/_ArticleList",
+                return PartialView("Partials/ArticleList",
                     mapper.Map<IEnumerable<Article>>(_blogService.GetArticles()));
             }
             catch (ValidationException ex)

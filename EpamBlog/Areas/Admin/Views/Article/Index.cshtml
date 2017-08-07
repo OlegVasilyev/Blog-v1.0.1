@@ -1,4 +1,4 @@
-﻿@model IEnumerable<EpamBlog.Models.Article>
+﻿@model IEnumerable<EpamBlog.ViewModels.Article>
 @{
     ViewBag.Title = "Admin - Articles";
     Layout = "../Shared/_Layout.cshtml";
@@ -17,7 +17,7 @@
                         <i class="material-icons right">reorder</i>
                     </div>
                     <div class="collapsible-body">
-                        @Html.Partial("Partials/FromForArticle", Model.LastOrDefault())
+                        @Html.Partial("Partials/FormForArticle", Model.LastOrDefault())
                     </div>
                 </li>
             </ul>

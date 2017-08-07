@@ -75,8 +75,8 @@
     <Compile Include="DAL\Context\AuthenticationDbInitializer.cs" />
     <Compile Include="DAL\Identity\ApplicationRoleManager.cs" />
     <Compile Include="DAL\Identity\ApplicationUserManager.cs" />
-    <Compile Include="DAL\Interfaces\IClientManager.cs" />
     <Compile Include="DAL\Interfaces\IBlogAuth.cs" />
+    <Compile Include="DAL\Interfaces\IClientManager.cs" />
     <Compile Include="DAL\Repositories\ClientManager.cs" />
     <Compile Include="DAL\Repositories\IdentityBlogAuth.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

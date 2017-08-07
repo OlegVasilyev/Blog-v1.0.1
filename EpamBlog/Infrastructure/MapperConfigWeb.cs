@@ -2,7 +2,7 @@
 using BusinessLogicLayerInterfaces.DataTransferObjects;
 using EpamBlog.ViewModels;
 
-namespace BusinessLogicLayer.Infrastructure
+namespace EpamBlog.Infrastructure
 {
     public class MapperConfigWeb
     {
