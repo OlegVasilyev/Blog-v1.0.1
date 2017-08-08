@@ -9,9 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpamBlog", "EpamBlog\EpamBl
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{AB5E1EB8-9757-4359-A55C-0A27DA174DFC}"
-	ProjectSection(ProjectDependencies) = postProject
-		{F62F851C-FB90-4455-B97E-F4809D2F3681} = {F62F851C-FB90-4455-B97E-F4809D2F3681}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthenticationLayer", "AuthenticationLayer\AuthenticationLayer.csproj", "{C83EE43B-8C46-4194-816B-91EE811A5C73}"
 EndProject
