@@ -63,10 +63,10 @@ namespace BusinessLogicLayer.Service
 
         public void SendMailResult(QuizDTO quizDto)
         {
-            string server = ConfigurationManager.AppSettings["server"];
-            string port = ConfigurationManager.AppSettings["port"];
-            string login = ConfigurationManager.AppSettings["login"];
-            string password = ConfigurationManager.AppSettings["password"];
+            string server = "smtp.gmail.com";
+            string port = "587";
+            string login = "epamsystemsummber@gmail.com";
+            string password = "1234567q";
 
             MailMessage mail = new MailMessage();
             mail.Subject = "Result";
