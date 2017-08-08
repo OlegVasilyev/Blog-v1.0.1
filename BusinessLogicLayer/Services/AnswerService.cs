@@ -7,6 +7,9 @@ using ValidationLayer.Infrastructure;
 
 namespace BusinessLogicLayer.Service
 {
+    /// <summary>
+    /// Class for working with Answer
+    /// </summary>
     public class AnswerService : IAnswerService
     {
         IBlogRepository DataBase { get; }

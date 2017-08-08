@@ -5,6 +5,10 @@ using Entities.Models;
 
 namespace DataAccessLayerSQL.Context
 {
+    /// <summary>
+    /// Drops database on each restart of the server and sets initial values to DB
+    /// Should be changed/removed before deployment
+    /// </summary>
     public class BlogInitializer : DropCreateDatabaseAlways<BlogContext>
     {
         protected override void Seed(BlogContext context)

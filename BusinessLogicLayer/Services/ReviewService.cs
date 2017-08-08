@@ -10,6 +10,9 @@ using ValidationLayer.Infrastructure;
 
 namespace BusinessLogicLayer.Service
 {
+    /// <summary>
+    /// Class for working with Review
+    /// </summary>
     public class ReviewService : IReviewService
     {
         IBlogRepository DataBase { get; }

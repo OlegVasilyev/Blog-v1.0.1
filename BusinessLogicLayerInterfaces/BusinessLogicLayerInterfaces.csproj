@@ -50,7 +50,6 @@
     <Compile Include="Interfaces\ICommentService.cs" />
     <Compile Include="Interfaces\IQuizService.cs" />
     <Compile Include="Interfaces\IReviewService.cs" />
-    <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

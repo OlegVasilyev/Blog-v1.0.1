@@ -14,9 +14,12 @@ using DataAccessLayerInterfaces.Repository;
 using ValidationLayer.Infrastructure;
 
 namespace BusinessLogicLayer.Service
-{
+{  /// <summary>
+   /// Class for working with Quiz
+   /// </summary>
     public class QuizService : IQuizService
     {
+
         IBlogRepository DataBase { get; }
         public QuizService(IBlogRepository database)
         {

@@ -10,6 +10,9 @@ using ValidationLayer.Infrastructure;
 
 namespace BusinessLogicLayer.Service
 {
+    /// <summary>
+    /// Class for working with comment
+    /// </summary>
     public class CommentService : ICommentService
     {
         IBlogRepository DataBase { get; }
