@@ -1,28 +1,26 @@
 ﻿using System;
-using Entities.IdentityEnties;
 using AuthenticationLayer.DAL.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using AuthenticationLayerDAL.Interface.Interfaces;
+using Entities.IdentityEnties;
 
 namespace AuthenticationLayerDAL.Repositories
 {
     public class AuthenticationRepository : IAuthenticationRepository
     {
         private readonly IdentityDbContext _db;
-
+        private  IClientManager clientManager;
+        private  ApplicationUserManager userManager;
+        private  ApplicationRoleManager roleManager;
         public AuthenticationRepository(IdentityDbContext context)
         {
             _db = context;
-            UserManager = new ApplicationUserManager(new UserStore<ApplicationUser>(_db));
-            RoleManager = new ApplicationRoleManager(new RoleStore<ApplicationRole>(_db));
-            ClientManager = new ClientManager(_db);
         }
 
-        public virtual ApplicationUserManager UserManager { get; }
+        public  IClientManager ClientManager => clientManager ?? (clientManager = new ClientManager(_db));
 
-        public virtual IClientManager ClientManager { get; }
-
-        public virtual ApplicationRoleManager RoleManager { get; }
+        public ApplicationRoleManager RoleManager => roleManager ?? (roleManager = new ApplicationRoleManager(new RoleStore<ApplicationRole>(_db)));
+            public ApplicationUserManager UserManager => userManager ?? (userManager = new ApplicationUserManager(new UserStore<ApplicationUser>(_db)));
 
         public void Save()
         {

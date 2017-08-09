@@ -22,7 +22,7 @@ namespace DependencyResolver.Ninject
         {
             //context
             kernel.Bind<DbContext>().To<BlogContext>().InRequestScope();
-            kernel.Bind<IdentityDbContext<ApplicationUser>>().To<AuthenticationContext>().InRequestScope();
+            kernel.Bind<IdentityDbContext<ApplicationUser>>().To<AuthenticationContext>();
             //repository, I know about Generic Repository but I decided to use patter UnitOfWork
             kernel.Bind<IBlogRepository>().To<BlogRepositories>();
             kernel.Bind<IAuthenticationRepository>().To<AuthenticationRepository>();

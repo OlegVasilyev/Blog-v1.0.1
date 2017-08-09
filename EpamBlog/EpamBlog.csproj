@@ -362,6 +362,10 @@
       <Project>{bf5f7af1-8967-4fda-92cb-0046a077acab}</Project>
       <Name>AuthenticationLayerBLL.Interface</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AuthenticationLayerBLL\AuthenticationLayerBLL.csproj">
+      <Project>{cccfeca2-eb3f-428d-8f03-d85a172d9131}</Project>
+      <Name>AuthenticationLayerBLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BusinessLogicLayerInterfaces\BusinessLogicLayerInterfaces.csproj">
       <Project>{8cafa261-96c9-4ed1-9e37-36d92ca8f8af}</Project>
       <Name>BusinessLogicLayerInterfaces</Name>

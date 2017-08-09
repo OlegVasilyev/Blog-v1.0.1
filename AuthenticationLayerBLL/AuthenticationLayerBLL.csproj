@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ServiceCreator.cs" />
     <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +68,10 @@
     <ProjectReference Include="..\AuthenticationLayerDAL.Interface\AuthenticationLayerDAL.Interface.csproj">
       <Project>{e3e09fdd-219a-4415-b98b-e7dd2fee4328}</Project>
       <Name>AuthenticationLayerDAL.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AuthenticationLayerDAL\AuthenticationLayerDAL.csproj">
+      <Project>{c70e855f-0cfa-41f6-9d30-8e5e3b025b36}</Project>
+      <Name>AuthenticationLayerDAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{a8503d74-8d6c-486a-8dd2-b7b32e19cac8}</Project>
