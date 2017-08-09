@@ -1,13 +1,12 @@
 ﻿using System.Data.Entity;
 using Entities.Models;
-using DataAccessLayerInterfaces.Interfaces;
 
 namespace DataAccessLayerSQL.Context
 {
     /// <summary>
     /// Context for working with related database
     /// </summary>
-    public class BlogContext : DbContext, IContext
+    public class BlogContext : DbContext
     {
         public BlogContext() : base("name=BlogContext") { }
         public virtual DbSet<Quiz> Quizes { get; set; }

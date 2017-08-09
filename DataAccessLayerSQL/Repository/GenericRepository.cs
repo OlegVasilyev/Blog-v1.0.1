@@ -10,38 +10,43 @@ namespace DataAccessLayerSQL.Repositories
     public class Repository<T> : IRepository<T> where T : class
     {
         private readonly DbContext context;
-        public Repository()
+        public Repository(DbContext context)
         {
-                
+            this.context = context;
         }
         public void Create(T item)
         {
-            throw new NotImplementedException();
+            context.Set<T>().Add(item);
+            context.SaveChanges();
         }
 
         public void Delete(int Id)
         {
-            throw new NotImplementedException();
+            var item = context.Set<T>().Find(Id);
+            if (item != null)
+                context.Set<T>().Remove(item);
+            context.SaveChanges();
         }
 
         public IEnumerable<T> Find(Func<T, bool> predicate)
         {
-            throw new NotImplementedException();
+            return context.Set<T>().Where(predicate).ToList();
         }
 
         public T Get(int Id)
         {
-            throw new NotImplementedException();
+            return context.Set<T>().Find(Id);
         }
 
         public IEnumerable<T> GetAll()
         {
-            throw new NotImplementedException();
+            return context.Set<T>();
         }
 
         public void Update(T item)
         {
-            throw new NotImplementedException();
+            context.Entry(item).State = EntityState.Modified;
+            context.SaveChanges();
         }
     }
 }

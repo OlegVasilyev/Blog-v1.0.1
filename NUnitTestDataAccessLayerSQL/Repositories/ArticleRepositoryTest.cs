@@ -25,7 +25,7 @@ namespace NUnitTestDataAccessLayerSQL.Repositories
             var mock = new Mock<BlogContext>();
             mock.Setup(a => a.Articles).Returns(mockSet.Object);
 
-            var repository = new ArticleRepository(mock.Object);
+            var repository = new Repository<Article>(mock.Object);
             var result = repository.GetAll();
 
             Assert.That(result, Is.TypeOf(typeof(IEnumerable<Article>)));
@@ -42,7 +42,7 @@ namespace NUnitTestDataAccessLayerSQL.Repositories
             mock.Setup(a => a.Articles).Returns(mockSet.Object);
 
             //Act
-            var repository = new ArticleRepository(mock.Object);
+            var repository = new Repository<Article>(mock.Object);
             var result = repository.Get(1);
 
             //Assert
