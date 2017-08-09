@@ -64,21 +64,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\DTO\UserDTO.cs" />
-    <Compile Include="BLL\Infrastructure\OperationDetails.cs" />
-    <Compile Include="BLL\Interfaces\IServiceCreator.cs" />
-    <Compile Include="BLL\Interfaces\IUserService.cs" />
-    <Compile Include="BLL\Services\ServiceCreator.cs" />
-    <Compile Include="BLL\Services\UserService.cs" />
-    <Compile Include="BLL\Services\Validator.cs" />
-    <Compile Include="DAL\Context\AuthenticationContext.cs" />
-    <Compile Include="DAL\Context\AuthenticationDbInitializer.cs" />
-    <Compile Include="DAL\Identity\ApplicationRoleManager.cs" />
-    <Compile Include="DAL\Identity\ApplicationUserManager.cs" />
-    <Compile Include="DAL\Interfaces\IBlogAuth.cs" />
-    <Compile Include="DAL\Interfaces\IClientManager.cs" />
-    <Compile Include="DAL\Repositories\ClientManager.cs" />
-    <Compile Include="DAL\Repositories\IdentityBlogAuth.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

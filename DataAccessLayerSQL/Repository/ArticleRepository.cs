@@ -1,6 +1,4 @@
-﻿using DataAccessLayerInterfaces.Interfaces;
-using DataAccessLayerInterfaces.Repository;
-using DataAccessLayerSQL.Context;
+﻿using DataAccessLayerInterfaces.Repository;
 using Entities.Models;
 using System;
 using System.Collections.Generic;

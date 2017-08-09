@@ -1,6 +1,6 @@
 ﻿using BusinessLogicLayerInterfaces.DataTransferObjects;
 using BusinessLogicLayerInterfaces.Interfaces;
-using EpamBlog.Infrastructure;
+using EpamBlog.MapperWeb;
 using EpamBlog.ViewModels;
 using System;
 using System.Collections.Generic;

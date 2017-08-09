@@ -47,16 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IdentityAuth\ApplicationRoleManager.cs" />
+    <Compile Include="IdentityAuth\ApplicationUserManager.cs" />
     <Compile Include="IdentityEnties\ApplicationRole.cs" />
     <Compile Include="IdentityEnties\ApplicationUser.cs" />
     <Compile Include="IdentityEnties\ClientProfile.cs" />
-    <Compile Include="Models\Answer.cs" />
-    <Compile Include="Models\Article.cs" />
-    <Compile Include="Models\Comment.cs" />
-    <Compile Include="Models\IEntity.cs" />
-    <Compile Include="Models\Review.cs" />
-    <Compile Include="Models\Tag.cs" />
-    <Compile Include="Models\Quiz.cs" />
+    <Compile Include="BlogEnties\Answer.cs" />
+    <Compile Include="BlogEnties\Article.cs" />
+    <Compile Include="BlogEnties\Comment.cs" />
+    <Compile Include="BlogEnties\IEntity.cs" />
+    <Compile Include="BlogEnties\Review.cs" />
+    <Compile Include="BlogEnties\Tag.cs" />
+    <Compile Include="BlogEnties\Quiz.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

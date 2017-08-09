@@ -1,7 +1,7 @@
-﻿using EpamBlog.App_Start;
+﻿using DependencyResolver.Ninject;
+using EpamBlog.App_Start;
 using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 using Ninject;
-using Ninject.Modules;
 using Ninject.Web.Common;
 using System;
 using System.Web;
@@ -63,7 +63,7 @@ namespace EpamBlog.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            System.Web.Mvc.DependencyResolver.SetResolver(new Ninject.NinjectDependencyResolver(kernel));
+            System.Web.Mvc.DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using NUnit.Framework;
-using AuthenticationLayer.BLL.DTO;
 
 namespace NUnitTestAuthenticationLayer.TestData
 {

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Moq;
 using NUnit.Framework;
 using Entities.Models;
-using BusinessLogicLayer.Infrastructure;
 using BusinessLogicLayer.Service;
 using BusinessLogicLayerInterfaces.DataTransferObjects;
 using DataAccessLayerInterfaces.Repository;

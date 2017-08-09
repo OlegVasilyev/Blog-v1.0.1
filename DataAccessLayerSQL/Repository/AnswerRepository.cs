@@ -1,5 +1,4 @@
-﻿using DataAccessLayerSQL.Context;
-using Entities.Models;
+﻿using Entities.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,49 +7,41 @@ using System.Data.Entity;
 
 namespace DataAccessLayerSQL.Repositories
 {
-    public class AnswerRepository : IRepository<Answer>
+    public class Repository<T> : IRepository<T> where T : class
     {
         private readonly DbContext context;
-        public AnswerRepository(DbContext context)
+        public Repository()
         {
-            this.context = context;
+                
         }
-
-        public void Create(Answer item)
+        public void Create(T item)
         {
-            context.Set<Answer>().Add(item);
+            throw new NotImplementedException();
         }
 
         public void Delete(int Id)
         {
-            var answer = context.Set<Answer>().Find(Id);
-            if (answer != null)
-                context.Set<Answer>().Remove(answer);
+            throw new NotImplementedException();
         }
 
-        public IEnumerable<Answer> Find(Func<Answer, bool> predicate)
+        public IEnumerable<T> Find(Func<T, bool> predicate)
         {
-            return context.Set<Answer>().Where(predicate).ToList();
+            throw new NotImplementedException();
         }
 
-        public Answer Get(int Id)
+        public T Get(int Id)
         {
-            return context.Set<Answer>().Find(Id);
+            throw new NotImplementedException();
         }
 
-        public IEnumerable<Answer> GetAll()
+        public IEnumerable<T> GetAll()
         {
-            return context.Set<Answer>();
+            throw new NotImplementedException();
         }
 
-        public void Update(Answer item)
+        public void Update(T item)
         {
-            var temp = context.Set<Answer>().Find(item.Id);
-            if(temp != null)
-            {
-                context.Entry(temp).CurrentValues.SetValues(item);
-                context.SaveChanges();
-            }
+            throw new NotImplementedException();
         }
     }
 }

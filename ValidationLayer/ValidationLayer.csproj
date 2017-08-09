@@ -40,11 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Infrastructure\ValidationException.cs" />
-    <Compile Include="Infrastructure\ValidatorBlogModels.cs" />
+    <Compile Include="InfrastructureAL\Validator.cs" />
+    <Compile Include="InfrastructureBLL\ValidationException.cs" />
+    <Compile Include="InfrastructureBLL\ValidatorBlogModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AuthenticationLayerBLL.Interface\AuthenticationLayerBLL.Interface.csproj">
+      <Project>{bf5f7af1-8967-4fda-92cb-0046a077acab}</Project>
+      <Name>AuthenticationLayerBLL.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BusinessLogicLayerInterfaces\BusinessLogicLayerInterfaces.csproj">
       <Project>{8cafa261-96c9-4ed1-9e37-36d92ca8f8af}</Project>
       <Name>BusinessLogicLayerInterfaces</Name>

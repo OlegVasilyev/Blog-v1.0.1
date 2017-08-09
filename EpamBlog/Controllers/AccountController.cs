@@ -1,21 +1,23 @@
-﻿using AuthenticationLayer.BLL.Infrastructure;
-using AuthenticationLayer.BLL.Interfaces;
-using EpamBlog.Models;
+﻿using EpamBlog.Models;
 using Microsoft.Owin.Security;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity.Owin;
-using AuthenticationLayer.BLL.DTO;
+using AuthenticationLayerBLL.Interface.Interfaces;
+using AuthenticationLayerBLL.Interface.DTO;
+using AuthenticationLayerBLL.Interface.Infrastructure;
 
 namespace EpamBlog.Controllers
 {
     public class AccountController : Controller
     {
-        private IUserService UserService =>
-            HttpContext.GetOwinContext().GetUserManager<IUserService>();
-
+        private IUserService _userService;
+        public AccountController(IUserService service)
+        {
+            _userService = service;
+        }
         private IAuthenticationManager AuthenticationManager =>
             HttpContext.GetOwinContext().Authentication;
 
@@ -32,7 +34,7 @@ namespace EpamBlog.Controllers
             if (ModelState.IsValid)
             {
                 var userDto = new UserDTO { Email = model.Email, Password = model.Password };
-                ClaimsIdentity claim =  UserService.Authenticate(userDto);
+                ClaimsIdentity claim = _userService.Authenticate(userDto);
                 if (claim == null)
                 {
                     ModelState.AddModelError("", "Invalid login or password");
@@ -75,7 +77,7 @@ namespace EpamBlog.Controllers
                     Name = model.Name,
                     Role = "user"
                 };
-                OperationDetails operationDetails =  UserService.Create(userDto);
+                OperationDetails operationDetails = _userService.Create(userDto);
 
                 if (!operationDetails.Succedeed)
                     ModelState.AddModelError(operationDetails.Property, operationDetails.Message);
@@ -86,7 +88,7 @@ namespace EpamBlog.Controllers
         }
         private void SetInitialDataAsync()
         {
-             UserService.SetInitialData(new UserDTO
+            _userService.SetInitialData(new UserDTO
             {
                 Email = "admin@gmail.com",
                 UserName = "admin@gmail.com",

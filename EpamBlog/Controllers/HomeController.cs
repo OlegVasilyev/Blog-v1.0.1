@@ -5,7 +5,7 @@ using System.Web.Mvc;
 using EpamBlog.ViewModels;
 using ValidationLayer.Infrastructure;
 using BusinessLogicLayerInterfaces.Interfaces;
-using EpamBlog.Infrastructure;
+using EpamBlog.MapperWeb;
 
 namespace EpamBlog.Controllers
 {

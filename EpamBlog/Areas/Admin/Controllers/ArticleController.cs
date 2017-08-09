@@ -7,7 +7,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using ValidationLayer.Infrastructure;
-using EpamBlog.Infrastructure;
 
 namespace EpamBlog.Areas.Admin.Controllers
 {

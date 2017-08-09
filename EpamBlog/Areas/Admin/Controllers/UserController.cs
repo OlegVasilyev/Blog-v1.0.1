@@ -1,4 +1,4 @@
-﻿using AuthenticationLayer.BLL.Interfaces;
+﻿using AuthenticationLayerBLL.Interface.Interfaces;
 using System.Web.Mvc;
 
 namespace EpamBlog.Areas.Admin.Controllers

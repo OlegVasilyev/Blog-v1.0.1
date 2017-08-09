@@ -203,8 +203,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\HtmlText.cs" />
-    <Compile Include="Infrastructure\MapperConfigWeb.cs" />
-    <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
+    <Compile Include="MapperWeb\MapperConfigWeb.cs" />
     <Compile Include="ViewModels\Answer.cs" />
     <Compile Include="ViewModels\Article.cs" />
     <Compile Include="Models\LoginModel.cs" />
@@ -359,9 +358,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AuthenticationLayer\AuthenticationLayer.csproj">
-      <Project>{c83ee43b-8c46-4194-816b-91ee811a5c73}</Project>
-      <Name>AuthenticationLayer</Name>
+    <ProjectReference Include="..\AuthenticationLayerBLL.Interface\AuthenticationLayerBLL.Interface.csproj">
+      <Project>{bf5f7af1-8967-4fda-92cb-0046a077acab}</Project>
+      <Name>AuthenticationLayerBLL.Interface</Name>
     </ProjectReference>
     <ProjectReference Include="..\BusinessLogicLayerInterfaces\BusinessLogicLayerInterfaces.csproj">
       <Project>{8cafa261-96c9-4ed1-9e37-36d92ca8f8af}</Project>

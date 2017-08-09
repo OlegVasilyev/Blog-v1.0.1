@@ -7,7 +7,6 @@ using BusinessLogicLayerInterfaces.DataTransferObjects;
 using AutoMapper;
 using Entities.Models;
 using BusinessLogicLayer.Infrastructure;
-using System.Configuration;
 using System.Net.Mail;
 using System.Net;
 using DataAccessLayerInterfaces.Repository;

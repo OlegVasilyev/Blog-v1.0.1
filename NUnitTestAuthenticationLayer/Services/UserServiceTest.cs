@@ -6,12 +6,12 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Moq;
 using NUnit.Framework;
 using NUnitTestAuthenticationLayer.TestData;
-using AuthenticationLayer.BLL.DTO;
-using AuthenticationLayer.BLL.Services;
-using AuthenticationLayer.DAL.Interfaces;
 using AuthenticationLayer.DAL.Identity;
 using Entities.IdentityEnties;
-using AuthenticationLayer.BLL.Infrastructure;
+using AuthenticationLayerBLL.Interface.DTO;
+using AuthenticationLayerDAL.Interface.Interfaces;
+using AuthenticationLayerBLL.Services;
+using AuthenticationLayerBLL.Interface.Infrastructure;
 
 namespace NUnitTestAuthenticationLayer.Services
 {
@@ -45,7 +45,7 @@ namespace NUnitTestAuthenticationLayer.Services
 
             var userManager = new ApplicationUserManager(mockStore.Object);
 
-            var mock = new Mock<IBlogAuth>();
+            var mock = new Mock<IAuthenticationRepository>();
             mock.Setup(a => a.UserManager).Returns(userManager);
 
             //Act
@@ -65,7 +65,7 @@ namespace NUnitTestAuthenticationLayer.Services
             mockStore.As<IQueryableUserStore<ApplicationUser>>();
             var userManager = new ApplicationUserManager(mockStore.Object);
 
-            var mock = new Mock<IBlogAuth>();
+            var mock = new Mock<IAuthenticationRepository>();
             mock.Setup(a => a.UserManager).Returns(userManager);
 
             //Act
@@ -96,7 +96,7 @@ namespace NUnitTestAuthenticationLayer.Services
             var mockRoleStore = new Mock<RoleStore<ApplicationRole>>();
             var roleManager = new ApplicationRoleManager(mockRoleStore.Object);
 
-            var mock = new Mock<IBlogAuth>();
+            var mock = new Mock<IAuthenticationRepository>();
             mock.Setup(a => a.UserManager).Returns(userManager);
             mock.Setup(a => a.RoleManager).Returns(roleManager);
 
@@ -130,7 +130,7 @@ namespace NUnitTestAuthenticationLayer.Services
             var mockRoleStore = new Mock<RoleStore<ApplicationRole>>();
             var roleManager = new ApplicationRoleManager(mockRoleStore.Object);
 
-            var mock = new Mock<IBlogAuth>();
+            var mock = new Mock<IAuthenticationRepository>();
             mock.Setup(a => a.UserManager).Returns(userManager);
             mock.Setup(a => a.RoleManager).Returns(roleManager);
 
@@ -164,7 +164,7 @@ namespace NUnitTestAuthenticationLayer.Services
             var mockRoleStore = new Mock<RoleStore<ApplicationRole>>();
             var roleManager = new ApplicationRoleManager(mockRoleStore.Object);
 
-            var mock = new Mock<IBlogAuth>();
+            var mock = new Mock<IAuthenticationRepository>();
             mock.Setup(a => a.UserManager).Returns(userManager);
             mock.Setup(a => a.RoleManager).Returns(roleManager);
 
@@ -197,7 +197,7 @@ namespace NUnitTestAuthenticationLayer.Services
             var mockRoleStore = new Mock<RoleStore<ApplicationRole>>();
             var roleManager = new ApplicationRoleManager(mockRoleStore.Object);
 
-            var mock = new Mock<IBlogAuth>();
+            var mock = new Mock<IAuthenticationRepository>();
             mock.Setup(a => a.UserManager).Returns(userManager);
             mock.Setup(a => a.RoleManager).Returns(roleManager);
 
