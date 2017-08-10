@@ -1,0 +1,38 @@
+[
+  {
+    "outputFileName": "Content/Modal.min.css",
+    "inputFiles": [
+      "Content/Modal.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/Site.min.css",
+    "inputFiles": [
+      "Content/Site.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/BlogStyle.min.css",
+    "inputFiles": [
+      "Content/BlogStyle.css"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/initialization.min.js",
+    "inputFiles": [
+      "Scripts/initialization.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/materialize.min.js",
+    "inputFiles": [
+      "Scripts/materialize.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/HeadSlider.min.js",
+    "inputFiles": [
+      "Scripts/HeadSlider.js"
+    ]
+  }
+]

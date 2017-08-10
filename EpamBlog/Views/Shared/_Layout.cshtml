@@ -4,28 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-
-    <link rel="shotcut icon" href="../../favicon.ico" type="image/ico">
-    <link rel="stylesheet" href="~/Content/BlogStyle.css" />
-    <link rel="stylesheet" href="~/Content/Site.css" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="~/Scripts/jquery-3.0.0.js"></script>
-    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
-    <script src="~/Scripts/materialize.js"></script>
-    <script src="~/Scripts/initialization.js"></script>
-    <script src="~/Scripts/formController.js"></script>
-    <link href="~/Content/Modal.css" rel="stylesheet" />
-    <script src="~/Scripts/script.js"></script>
+    <link href="~/Content/BlogStyle.min.css" rel="stylesheet" />
+    <link href="~/Content/Modal.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.min.css" rel="stylesheet" />
 </head>
 <body>
-    
     <a style="position:fixed; margin-top:400px;margin-left:20px; text-align:left" href="#">
-    <img style="width:100px" src="~/Content/Images/top.png" />
-</a>
+        <img style="width:100px" src="~/Content/Images/top.png" />
+    </a>
     <div class="row">
         <div class="col s10 push-s1">
             <div id="header" class="card centralized no-margin-bot">
-                <canvas id="slideshow" class="card-image" style="width:100%"></canvas>
+                <a href="~/Home/Index">
+                    <canvas id="slideshow" class="card-image" style="width:100%"></canvas>
+                </a>
             </div>
         </div>
     </div>
@@ -43,6 +35,10 @@
             </div>
         </div>
     </div>
-    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/HeadSlider.min.js"></script>
+    <script src="~/Scripts/initialization.min.js"></script>
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/materialize.js"></script>
 </body>
 </html>

@@ -16,7 +16,16 @@ namespace EpamBlog.Controllers
         private IUserService _userService;
         public AccountController(IUserService service)
         {
+
             _userService = service;
+            _userService.Create(new UserDTO
+            {
+                Email = "admin@gmail.com",
+                UserName = "admin@gmail.com",
+                Password = "admin123",
+                Name = "Admin",
+                Role = "admin",
+            });
         }
         private IAuthenticationManager AuthenticationManager =>
             HttpContext.GetOwinContext().Authentication;
@@ -30,7 +39,7 @@ namespace EpamBlog.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginModel model)
         {
-             SetInitialDataAsync();
+            
             if (ModelState.IsValid)
             {
                 var userDto = new UserDTO { Email = model.Email, Password = model.Password };
@@ -67,7 +76,6 @@ namespace EpamBlog.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(RegisterModel model)
         {
-            SetInitialDataAsync();
             if (ModelState.IsValid)
             {
                 var userDto = new UserDTO
@@ -85,17 +93,6 @@ namespace EpamBlog.Controllers
                 return View("SuccessRegister");
             }
             return View(model);
-        }
-        private void SetInitialDataAsync()
-        {
-            _userService.SetInitialData(new UserDTO
-            {
-                Email = "admin@gmail.com",
-                UserName = "admin@gmail.com",
-                Password = "admin123",
-                Name = "Admin Adminovich",
-                Role = "admin",
-            }, new List<string> { "user", "admin" });
         }
     }
 }

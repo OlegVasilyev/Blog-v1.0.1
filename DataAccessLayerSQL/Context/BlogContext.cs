@@ -8,7 +8,7 @@ namespace DataAccessLayerSQL.Context
     /// </summary>
     public class BlogContext : DbContext
     {
-        public BlogContext() : base("name=BlogContext") { }
+        public BlogContext() : base("BlogContext") { }
         public virtual DbSet<Quiz> Quizes { get; set; }
         public virtual DbSet<Article> Articles { get; set; }
         public virtual DbSet<Answer> Answers { get; set; }

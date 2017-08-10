@@ -1,11 +1,9 @@
 ﻿@model EpamBlog.ViewModels.Article
 @using EpamBlog.Helpers;
-@using EpamBlog.ViewModels;
+
 @{
     ViewBag.Title = Model.Name;
 }
-<link href="~/Content/Acordion.css" rel="stylesheet" />
-
 <div class="row no-margin-bot">
     <div class="col s7 push-s1">
         <div id="main-body" class="card">
@@ -32,35 +30,33 @@
                             <p class="flow-text sub-welcome-text right-align">@Model.Date</p>
                         </div>
                     </div>
+                    <p class="flow-text welcome-text centralized">Comments</p>
+                    <hr class="colored-hr no-margin-vert" />
+                    <ul class="collapsible z-depth-0 no-margin-vert" data-collapsible="accordion">
+                        <li>
+                            <div class="collapsible-header centralized write-article-header">
+                                <span class="flow-text write-article-text">Write a comment</span>
+                            </div>
+                            <div class="collapsible-body centralized">
+                                @Html.Partial("../Comment/Partials/FormForComment", Model.NewComment)
+                            </div>
+                            <div id="comment_target" class="row centralized">
+                                @Html.Partial("../Comment/Partials/DisplayComments", Model.Comments)
+                            </div>
+                        </li>
+                    </ul>
+                    <hr class="colored-hr no-margin-vert" />
                     <div class="row">
-                        <div class="centralized">
-                            <div>
-                                <input type="radio" name="size" id="small" value="small" checked="checked" />
-                                <label for="small">Comments</label>
-                                <article>
-                                    @Html.Partial("~/Views/Comment/Partials/DisplayComments.cshtml", Model.Comments);
-                                </article>
-                            </div>
-                            
-                            <div>
-                                <input type="radio" name="size" id="medium" value="medium" />
-                                <label for="medium">Tags</label>
-                                <article>
-                                    <p class="flow-text tag-text">
-                                        @if (Model.Tags != null)
-                                        {
-                                            foreach (var tag in Model.Tags)
-                                            {
-                                                <a href="~/Home/Search?tag=@tag" class="main-color-text tag-item">@(tag)</a>
-                                                <span class="flow-text">  </span>
-                                            }
-                                        }
-                                    </p>
-                                    
-                                </article>
-
-                            </div>
-                        </div>
+                    <p class="flow-text tag-text centralized">
+                        @if (Model.Tags != null)
+                        {
+                            foreach (var tag in Model.Tags)
+                            {
+                                <a href="~/Home/Search?tag=@tag" class="main-color-text tag-item">@(tag)</a>
+                                <span class="flow-text">  </span>
+                            }
+                        }
+                    </p>
                     </div>
                 </div>
             </div>

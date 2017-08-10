@@ -13,11 +13,11 @@ namespace AuthenticationLayerBLL.Services
 {
     public class UserService : IUserService
     {
-        IAuthenticationRepository Database { get; }
+        IAuthenticationRepository _database;
 
         public UserService(IAuthenticationRepository uow)
         {
-            Database = uow;
+            _database = uow;
         }
 
         public OperationDetails Create(UserDTO userDto)
@@ -25,21 +25,21 @@ namespace AuthenticationLayerBLL.Services
             OperationDetails validationResult = Validator.ValidateUser(userDto);
             if (validationResult.Succedeed == false)
                 return validationResult;
-            ApplicationUser user = Database.UserManager.FindByEmail(userDto.Email);
+            ApplicationUser user = _database.UserManager.FindByEmail(userDto.Email);
             if (user == null)
             {
                 user = new ApplicationUser { Email = userDto.Email, UserName = userDto.Email };
-                IdentityResult result = Database.UserManager.Create(user, userDto.Password);
+                IdentityResult result = _database.UserManager.Create(user, userDto.Password);
                 if (result.Errors.Any())
                 {
                     return new OperationDetails(false, result.Errors.FirstOrDefault(), "");
                 }
                 // Add role
-                Database.UserManager.AddToRole(user.Id, userDto.Role);
+                _database.UserManager.AddToRole(user.Id, userDto.Role);
                 // Create user profile
                 var clientProfile = new ClientProfile { Id = user.Id, Name = userDto.Name };
-                Database.ClientManager.Create(clientProfile);
-                Database.Save();
+                _database.ClientManager.Create(clientProfile);
+                _database.Save();
                 return new OperationDetails(true, "Registration succeed", "");
             }
             return new OperationDetails(false, "User with such login already exists", "Email");
@@ -48,10 +48,10 @@ namespace AuthenticationLayerBLL.Services
         public IEnumerable<UserDTO> GetAll()
         {
             List<UserDTO> usersDto = new List<UserDTO>();
-            IEnumerable<ApplicationUser> users = Database.UserManager.Users.ToList();
+            IEnumerable<ApplicationUser> users = _database.UserManager.Users.ToList();
             foreach (var user in users)
             {
-                string role = Database.RoleManager.FindById(user.Roles.Last().RoleId).Name;
+                string role = _database.RoleManager.FindById(user.Roles.Last().RoleId).Name;
                 usersDto.Add(new UserDTO
                 {
                     UserName = user.Email,
@@ -66,10 +66,10 @@ namespace AuthenticationLayerBLL.Services
 
         public UserDTO Get(string id)
         {
-            ApplicationUser user = Database.UserManager.FindById(id);
+            ApplicationUser user = _database.UserManager.FindById(id);
             if (user != null)
             {
-                var role = Database.RoleManager.FindById(user.Roles.Last().RoleId);
+                var role = _database.RoleManager.FindById(user.Roles.Last().RoleId);
                 string roleName = null;
                 if (role != null)
                     roleName = role.Name;
@@ -92,23 +92,23 @@ namespace AuthenticationLayerBLL.Services
             if (string.IsNullOrEmpty(roleName))
                 return new OperationDetails(false, "Role cannot be empty", "");
             // Search for user
-            ApplicationUser user = Database.UserManager.FindByEmail(userDto.Email);
+            ApplicationUser user = _database.UserManager.FindByEmail(userDto.Email);
             if (user != null)
             {
                 // Removing old roles
-                Database.UserManager.RemoveFromRoles(user.Id, Database.UserManager.GetRoles(user.Id).ToArray());
-                var role = Database.RoleManager.FindByName(roleName);
+                _database.UserManager.RemoveFromRoles(user.Id, _database.UserManager.GetRoles(user.Id).ToArray());
+                var role = _database.RoleManager.FindByName(roleName);
                 // If the role has already existed
                 if (role != null)
                 {
-                    Database.UserManager.AddToRole(user.Id, roleName);
-                    Database.Save();
+                    _database.UserManager.AddToRole(user.Id, roleName);
+                    _database.Save();
                     return new OperationDetails(true, "Role successfuly set", "");
                 }
                 // If the role has NOT existed
-                Database.RoleManager.Create(new ApplicationRole { Name = roleName });
-                Database.UserManager.AddToRole(user.Id, roleName);
-                Database.Save();
+                _database.RoleManager.Create(new ApplicationRole { Name = roleName });
+                _database.UserManager.AddToRole(user.Id, roleName);
+                _database.Save();
                 return new OperationDetails(true, "Role successfuly created and setted", "");
             }
             return new OperationDetails(false, "User wasn't found", "");
@@ -118,30 +118,16 @@ namespace AuthenticationLayerBLL.Services
         {
             ClaimsIdentity claim = null;
             // Search for user
-            ApplicationUser user = Database.UserManager.Find(userDto.Email, userDto.Password);
+            ApplicationUser user = _database.UserManager.Find(userDto.Email, userDto.Password);
             // Authorize user and return ClaimsIdentity object
             if (user != null)
-                claim = Database.UserManager.CreateIdentity(user,
+                claim = _database.UserManager.CreateIdentity(user,
                                             DefaultAuthenticationTypes.ApplicationCookie);
             return claim;
         }
-
-        public void SetInitialData(UserDTO adminDto, List<string> roles)
-        {
-            foreach (string roleName in roles)
-            {
-                ApplicationRole role = Database.RoleManager.FindByName(roleName);
-                if (role == null)
-                {
-                    role = new ApplicationRole { Name = roleName };
-                    Database.RoleManager.Create(role);
-                }
-            }
-            Create(adminDto);
-        }
         public void Dispose()
         {
-            Database.Dispose();
+            _database.Dispose();
         }
     }
 }

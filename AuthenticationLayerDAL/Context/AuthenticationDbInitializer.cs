@@ -1,4 +1,7 @@
-﻿using System.Data.Entity;
+﻿using Entities.IdentityEnties;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections.Generic;
+using System.Data.Entity;
 
 namespace AuthenticationLayerDAL.Context
 {
@@ -10,6 +13,8 @@ namespace AuthenticationLayerDAL.Context
     {
         protected override void Seed(AuthenticationContext db)
         {
+            db.Roles.Add(new IdentityRole("user"));
+            db.Roles.Add(new IdentityRole("admin"));
         }
     }
 }

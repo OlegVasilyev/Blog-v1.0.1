@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BusinessLogicLayerInterfaces.DataTransferObjects;
 using BusinessLogicLayerInterfaces.Interfaces;
+using EpamBlog.Filters.Attribute;
 using EpamBlog.ViewModels;
 using System;
 using System.Linq;
@@ -17,11 +18,11 @@ namespace EpamBlog.Controllers
         }
 
         [HttpGet]
+        [QuizAccessAuthAttribute]
         public ActionResult Index()
         {
             return View();
         }
-
         [HttpPost]
         public ActionResult Index(Quiz quiz)
         {

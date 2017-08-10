@@ -7,22 +7,22 @@ namespace AuthenticationLayerDAL.Repositories
 {
     class ClientManager : IClientManager
     {
-        public IdentityDbContext Database { get; set; }
+        public IdentityDbContext<ApplicationUser> _database;
 
-        public ClientManager(IdentityDbContext db)
+        public ClientManager(IdentityDbContext<ApplicationUser> db)
         {
-            Database = db;
+            _database = db;
         }
 
         public void Create(ClientProfile item)
         {
-            Database.Set<ClientProfile>().Add(item);
-            Database.SaveChanges();
+            _database.Set<ClientProfile>().Add(item);
+            _database.SaveChanges();
         }
 
         public void Dispose()
         {
-            Database.Dispose();
+            _database.Dispose();
         }
     }
 }

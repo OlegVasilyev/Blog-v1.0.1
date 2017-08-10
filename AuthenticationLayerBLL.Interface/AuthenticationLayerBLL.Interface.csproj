@@ -49,7 +49,6 @@
   <ItemGroup>
     <Compile Include="DTO\UserDTO.cs" />
     <Compile Include="Infrastructure\OperationDetails.cs" />
-    <Compile Include="Interfaces\IServiceCreator.cs" />
     <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

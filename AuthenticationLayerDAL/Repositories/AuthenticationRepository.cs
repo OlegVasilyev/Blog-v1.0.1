@@ -8,11 +8,11 @@ namespace AuthenticationLayerDAL.Repositories
 {
     public class AuthenticationRepository : IAuthenticationRepository
     {
-        private readonly IdentityDbContext _db;
+        private readonly IdentityDbContext<ApplicationUser> _db;
         private  IClientManager clientManager;
         private  ApplicationUserManager userManager;
         private  ApplicationRoleManager roleManager;
-        public AuthenticationRepository(IdentityDbContext context)
+        public AuthenticationRepository(IdentityDbContext<ApplicationUser> context)
         {
             _db = context;
         }

@@ -981,11 +981,10 @@
 
 .teal {
     background-color: rgb(34, 131, 180);
-    !important;
 }
 
 .teal-text {
-    color: rgb(34, 131, 180); !important;
+    color: rgb(34, 131, 180);
 }
 
 .teal.lighten-5 {
@@ -4888,8 +4887,6 @@ small {
 
     .tabs .tab {
         -webkit-box-flex: 1;
-        -webkit-flex-grow: 1;
-        -ms-flex-positive: 1;
         flex-grow: 1;
         display: block;
         float: left;

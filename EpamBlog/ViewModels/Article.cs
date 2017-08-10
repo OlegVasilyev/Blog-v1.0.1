@@ -19,6 +19,7 @@ namespace EpamBlog.ViewModels
         [Required]
         public List<string> Tags { get; set; }
         public List<Comment> Comments { get; set; }
+        public Comment NewComment => new Comment() { IdArticle = Id };
         public Article()
         {
             Tags = new List<string>();

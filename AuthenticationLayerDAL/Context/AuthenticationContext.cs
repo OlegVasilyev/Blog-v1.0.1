@@ -13,7 +13,7 @@ namespace AuthenticationLayerDAL.Context
         {
             Database.SetInitializer(new AuthenticationDbInitializer());
         }
-        public AuthenticationContext() : base("name=AuthenticationContext")
+        public AuthenticationContext() : base("AuthenticationContext")
         {
         }
 

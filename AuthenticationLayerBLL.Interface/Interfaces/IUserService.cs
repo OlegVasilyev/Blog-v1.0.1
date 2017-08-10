@@ -38,12 +38,5 @@ namespace AuthenticationLayerBLL.Interface.Interfaces
         /// <param name="userDto">User to authenticate</param>
         /// <returns>User's claims</returns>
         ClaimsIdentity Authenticate(UserDTO userDto);
-
-        /// <summary>
-        /// Sets initial data to db (e.g. sets admin)
-        /// </summary>
-        /// <param name="adminDto">User that will be created like administrator</param>
-        /// <param name="roles">All initial roles of the application</param>
-        void SetInitialData(UserDTO adminDto, List<string> roles);
     }
 }

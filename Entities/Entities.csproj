@@ -59,6 +59,7 @@
     <Compile Include="BlogEnties\Review.cs" />
     <Compile Include="BlogEnties\Tag.cs" />
     <Compile Include="BlogEnties\Quiz.cs" />
+    <Compile Include="IdentityEnties\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
