@@ -33,7 +33,6 @@ namespace DependencyResolver.Ninject
             kernel.Bind<IQuizService>().To<QuizService>();
             kernel.Bind<IAnswerService>().To<AnswerService>();
             kernel.Bind<IReviewService>().To<ReviewService>();
-            kernel.Bind<ICommentService>().To<CommentService>();
         }
     }
 }

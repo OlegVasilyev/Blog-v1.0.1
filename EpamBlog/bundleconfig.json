@@ -34,5 +34,17 @@
     "inputFiles": [
       "Scripts/HeadSlider.js"
     ]
+  },
+  {
+    "outputFileName": "Content/Load.min.css",
+    "inputFiles": [
+      "Content/Load.css"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Load.min.js",
+    "inputFiles": [
+      "Scripts/Load.js"
+    ]
   }
 ]

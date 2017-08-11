@@ -17,7 +17,7 @@ namespace EpamBlog.Controllers
             this._commentService = service;
         }
         [HttpGet]
-        public PartialViewResult DisplayComments(int? id)
+        public ActionResult DisplayComments(int? id)
         {
             var mapper = MapperConfigWeb.GetConfigFromDTO().CreateMapper();
             return PartialView("~/Views/Comment/Partials/DisplayComments.cshtml", mapper.Map<IEnumerable<Comment>>(_commentService.GetComments(id)));

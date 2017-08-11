@@ -80,7 +80,7 @@ for (var i = 0; i < aImgs.length; i++) {
     }
 }
 
-window.onload = function(){
+window.addEventListener("load", function () {
     // creating canvas objects
     canvas = document.getElementById('slideshow');
     ctx = canvas.getContext('2d');
@@ -121,7 +121,7 @@ window.onload = function(){
     }
 
     drawScene();
-};
+});
 
 function drawScene() {
     // clear context

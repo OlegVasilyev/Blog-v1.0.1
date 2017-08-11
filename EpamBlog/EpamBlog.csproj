@@ -233,10 +233,15 @@
     <Content Include="Content\Images\epam-company.jpg" />
     <Content Include="Content\Images\header-logo.png" />
     <Content Include="Content\Images\review-logo.png" />
+    <Content Include="Content\Images\tail-spin.svg" />
     <Content Include="Content\Images\top.png" />
     <Content Include="Content\Images\user-logo.png" />
     <Content Include="Content\jquery.ui.base.css" />
     <Content Include="Content\jquery.ui.theme.css" />
+    <Content Include="Content\Load.css" />
+    <Content Include="Content\Load.min.css">
+      <DependentUpon>Load.css</DependentUpon>
+    </Content>
     <Content Include="Content\Modal.css" />
     <Content Include="Content\Modal.min.css">
       <DependentUpon>Modal.css</DependentUpon>
@@ -318,6 +323,10 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Load.js" />
+    <Content Include="Scripts\Load.min.js">
+      <DependentUpon>Load.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\materialize.js" />
     <Content Include="Scripts\materialize.min.js">
       <DependentUpon>materialize.js</DependentUpon>
