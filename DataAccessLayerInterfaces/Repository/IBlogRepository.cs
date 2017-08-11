@@ -8,6 +8,7 @@ namespace DataAccessLayerInterfaces.Repository
     {
         IRepository<Article> Articles { get; }
         IRepository<Review> Reviews { get; }
+        IRepository<Question> Questions { get; }
         IRepository<Quiz> Quizes {get;}
         IRepository<Comment> Comments {get; }
         IRepository<Answer> Answers { get; }

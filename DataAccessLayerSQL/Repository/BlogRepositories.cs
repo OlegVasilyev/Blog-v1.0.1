@@ -14,7 +14,7 @@ namespace DataAccessLayerSQL.Repositories
         private Repository<Tagg> tagRepository;
         private Repository<Review> reviewrepRepository;
         private Repository<Comment> commentRepository;
-
+        private Repository<Question> questionRepository;
         public BlogRepositories(DbContext context)
         {
             _context = context;
@@ -22,7 +22,7 @@ namespace DataAccessLayerSQL.Repositories
         public IRepository<Article> Articles => articleRepository ?? (articleRepository = new Repository<Article>(_context));
 
         public IRepository<Review> Reviews => reviewrepRepository ?? (reviewrepRepository = new Repository<Review>(_context));
-
+        public IRepository<Question> Questions => questionRepository ?? (questionRepository = new Repository<Question>(_context));
         public IRepository<Quiz> Quizes => quizRepository ?? (quizRepository = new Repository<Quiz>(_context));
         public IRepository<Comment> Comments => commentRepository ?? (commentRepository = new Repository<Comment>(_context));
 

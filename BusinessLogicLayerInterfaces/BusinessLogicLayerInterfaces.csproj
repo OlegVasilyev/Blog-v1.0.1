@@ -43,11 +43,13 @@
     <Compile Include="DataTransferObjects\AnswerDTO.cs" />
     <Compile Include="DataTransferObjects\ArticleDTO.cs" />
     <Compile Include="DataTransferObjects\CommentDTO.cs" />
+    <Compile Include="DataTransferObjects\QuestionDTO.cs" />
     <Compile Include="DataTransferObjects\QuizDTO.cs" />
     <Compile Include="DataTransferObjects\ReviewDTO.cs" />
     <Compile Include="Interfaces\IAnswerService.cs" />
     <Compile Include="Interfaces\IArticleService.cs" />
     <Compile Include="Interfaces\ICommentService.cs" />
+    <Compile Include="Interfaces\IPollService.cs" />
     <Compile Include="Interfaces\IQuizService.cs" />
     <Compile Include="Interfaces\IReviewService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

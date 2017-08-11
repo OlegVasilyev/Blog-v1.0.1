@@ -60,6 +60,11 @@ namespace DataAccessLayerSQL.Context
                      Id=1, Authorname="Joe", Date = DateTime.UtcNow, Text = "What a disgusting site..."
                 }
             };
+            var question = new Question
+            {
+                Id = 1,
+                Text = "How often do you think about your future?"
+            };
             var answersFirstQuestion = new List<Answer>()
             {
                 new Answer()
@@ -87,53 +92,12 @@ namespace DataAccessLayerSQL.Context
                 }
 
             };
-            var answersSecondQuestion = new List<Answer>()
-            {
-                new Answer()
-                {
-                     Id = 4,
-                     Text = "Junior",
-                     QuestionId = 1,
-                     VotesCount = 10
-
-                },
-                new Answer()
-                {
-                    Id = 5,
-                    Text = "Middle",
-                    QuestionId = 1,
-                    VotesCount = 20
-
-                },
-                new Answer()
-                {
-                    Id = 6,
-                    Text = "Senior",
-                    QuestionId = 1,
-                    VotesCount =30
-                },
-                new Answer()
-                {
-                    Id = 7,
-                    Text = "Team Lead",
-                    QuestionId = 1,
-                    VotesCount =30
-                },
-                new Answer()
-                {
-                    Id = 8,
-                    Text = "Master",
-                    QuestionId = 1,
-                    VotesCount =30
-                }
-
-            };
             //I insert data here
             context.Tags.AddRange(tags);
+            context.Answers.AddRange(answersFirstQuestion);
+            context.Questions.Add(question);
             context.Articles.AddRange(articles);
             context.Reviews.AddRange(reviews);
-            context.Answers.AddRange(answersFirstQuestion);
-            context.Answers.AddRange(answersSecondQuestion);
             context.SaveChanges();
         }
     }

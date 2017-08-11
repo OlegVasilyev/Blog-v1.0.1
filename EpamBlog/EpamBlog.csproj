@@ -196,6 +196,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PollController.cs" />
     <Compile Include="Controllers\QuizeController.cs" />
     <Compile Include="Controllers\ReviewsController.cs" />
     <Compile Include="Filters\Attribute\QuizAccessAuthAttribute.cs" />
@@ -210,6 +211,8 @@
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="ViewModels\Comment.cs" />
+    <Compile Include="ViewModels\PollResult.cs" />
+    <Compile Include="ViewModels\Question.cs" />
     <Compile Include="ViewModels\Review.cs" />
     <Compile Include="ViewModels\SearchByTag.cs" />
     <Compile Include="ViewModels\Quiz.cs" />
@@ -291,7 +294,6 @@
     <Content Include="fonts\Roboto-Thin.woff2" />
     <None Include="bundleconfig.json" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
-    <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\cookie.js" />
     <Content Include="Scripts\HeadSlider.min.js">
@@ -367,6 +369,8 @@
     <Content Include="Views\Account\Partials\FormForRegister.cshtml" />
     <Content Include="Views\Comment\Partials\DisplayComments.cshtml" />
     <Content Include="Views\Comment\Partials\FormForComment.cshtml" />
+    <Content Include="Views\Poll\_PollBox.cshtml" />
+    <Content Include="Views\Poll\_PollResult.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

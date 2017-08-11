@@ -12,6 +12,7 @@ namespace DataAccessLayerSQL.Context
         public virtual DbSet<Quiz> Quizes { get; set; }
         public virtual DbSet<Article> Articles { get; set; }
         public virtual DbSet<Answer> Answers { get; set; }
+        public virtual DbSet<Question> Questions { get; set; }
         public virtual DbSet<Review> Reviews { get; set; }
         public virtual DbSet<Tagg> Tags { get; set; }
         public virtual DbSet<Comment> Comments { get; set; }

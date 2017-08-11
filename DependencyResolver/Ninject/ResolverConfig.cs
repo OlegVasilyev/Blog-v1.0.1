@@ -13,6 +13,7 @@ using AuthenticationLayerBLL.Interface.Interfaces;
 using AuthenticationLayerBLL.Services;
 using AuthenticationLayerDAL.Interface.Interfaces;
 using AuthenticationLayerDAL.Repositories;
+using BusinessLogicLayer.Service;
 
 namespace DependencyResolver.Ninject
 {
@@ -31,8 +32,8 @@ namespace DependencyResolver.Ninject
             kernel.Bind<IArticleService>().To<ArticleService>();
             kernel.Bind<ICommentService>().To<CommentService>();
             kernel.Bind<IQuizService>().To<QuizService>();
-            kernel.Bind<IAnswerService>().To<AnswerService>();
             kernel.Bind<IReviewService>().To<ReviewService>();
+            kernel.Bind<IPollService>().To<PollService>();
         }
     }
 }

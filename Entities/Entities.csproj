@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BlogEnties\Question.cs" />
     <Compile Include="IdentityAuth\ApplicationRoleManager.cs" />
     <Compile Include="IdentityAuth\ApplicationUserManager.cs" />
     <Compile Include="IdentityEnties\ApplicationRole.cs" />
@@ -55,7 +56,7 @@
     <Compile Include="BlogEnties\Answer.cs" />
     <Compile Include="BlogEnties\Article.cs" />
     <Compile Include="BlogEnties\Comment.cs" />
-    <Compile Include="BlogEnties\IEntity.cs" />
+    <Compile Include="BlogEnties\IdEntity.cs" />
     <Compile Include="BlogEnties\Review.cs" />
     <Compile Include="BlogEnties\Tag.cs" />
     <Compile Include="BlogEnties\Quiz.cs" />
