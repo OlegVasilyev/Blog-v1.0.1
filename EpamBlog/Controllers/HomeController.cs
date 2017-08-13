@@ -23,7 +23,7 @@ namespace EpamBlog.Controllers
             return View(mapper.Map<IEnumerable<Article>>(_articleService.GetArticles()));
         }
         [HttpGet]
-        public ActionResult DisplayArticle(int? id)
+        public ActionResult DisplayArticle(string id)
         {
             if (id == null)
             {

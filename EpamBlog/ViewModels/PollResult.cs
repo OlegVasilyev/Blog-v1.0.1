@@ -9,6 +9,6 @@ namespace EpamBlog.ViewModels
     {
         public Question Question { get; set; }
 
-        public int AnswerId { get; set; }
+        public string AnswerId { get; set; }
     }
 }

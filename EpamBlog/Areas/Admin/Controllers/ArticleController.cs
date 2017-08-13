@@ -72,7 +72,7 @@ namespace EpamBlog.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult DeleteArticle(int? id)
+        public ActionResult DeleteArticle(string id)
         {
             if (id == null)
             {

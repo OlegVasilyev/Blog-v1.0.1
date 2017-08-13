@@ -20,7 +20,7 @@ namespace EpamBlog.Controllers
         }
 
         [HttpGet]
-        public ActionResult Index(int? id)
+        public ActionResult Index(string id)
         {
             if (id == null)
             {
@@ -36,7 +36,7 @@ namespace EpamBlog.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(int questionId, int answerId)
+        public ActionResult Index(string questionId, string answerId)
         {
             var questionDto = _pollService.GetQuestion(questionId);
 

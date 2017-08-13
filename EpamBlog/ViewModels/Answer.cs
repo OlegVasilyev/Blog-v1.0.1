@@ -6,7 +6,7 @@ namespace EpamBlog.ViewModels
     public class Answer
     {
         [Required]
-        public int Id { get; set; }
+        public string Id { get; set; }
         [Required]
         public int QuestionId { get; set; }
         [Required]

@@ -46,23 +46,22 @@ namespace BusinessLogicLayer.Service
             DataBase.Save();
         }
 
-        public void DeleteArticle(int? Id)
+        public void DeleteArticle(string Id)
         {
-
             if (Id == null)
                 throw new ValidationException("Id is null", "");
             if (!DataBase.Articles.Find(x => x.Id == Id).Any())
                 throw new ValidationException("Article wasn't found", "");
 
-            DataBase.Articles.Delete((int)Id);
+            DataBase.Articles.Delete(Id);
             DataBase.Save();
         }
 
-        public ArticleDTO GetArticle(int? Id)
+        public ArticleDTO GetArticle(string Id)
         {
             if (Id == null)
                 throw new ValidationException("Article's id wasn't set", "");
-            var article = DataBase.Articles.Get(Id.Value);
+            var article = DataBase.Articles.Get(Id);
             if (article == null)
                 throw new ValidationException("Article wasn't found", "");
 

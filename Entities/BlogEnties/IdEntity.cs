@@ -1,10 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using System.ComponentModel.DataAnnotations;
 namespace Entities.Models
 {
     public class IdEntity
     {
+       
         [Key]
         [ScaffoldColumn(false)]
-        public int Id { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
     }
 }

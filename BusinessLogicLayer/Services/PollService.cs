@@ -21,11 +21,11 @@ namespace BusinessLogicLayer.Service
         {
             DataBase = uow;
         }
-        public QuestionDTO GetQuestion(int? id)
+        public QuestionDTO GetQuestion(string id)
         {
             if (id == null)
                 throw new ValidationException("Question's id wasn't set", "");
-            var question = DataBase.Questions.Get(id.Value);
+            var question = DataBase.Questions.Get(id);
             if (question == null)
                 throw new ValidationException("Question wasn't found", "");
 

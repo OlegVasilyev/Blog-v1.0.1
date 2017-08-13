@@ -30,20 +30,20 @@ namespace BusinessLogicLayer.Service
             DataBase.Save();
         }
 
-        public void DeleteComment(int? Id)
+        public void DeleteComment(string Id)
         {
             if (Id == null)
                 throw new ValidationException("Id is null", "");
             if (!DataBase.Articles.Find(x => x.Id == Id).Any())
                 throw new ValidationException("Comment wasn't found", "");
 
-            DataBase.Comments.Delete((int)Id);
+            DataBase.Comments.Delete(Id);
             DataBase.Save();
         }
 
-        public IEnumerable<CommentDTO> GetComments(int? Id)
+        public IEnumerable<CommentDTO> GetComments(string Id)
         {
-            var article = DataBase.Articles.Get(Id.Value);
+            var article = DataBase.Articles.Get(Id);
             if (article == null)
                 return null;
 

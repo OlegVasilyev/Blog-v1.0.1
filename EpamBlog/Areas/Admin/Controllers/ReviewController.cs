@@ -29,7 +29,7 @@ namespace EpamBlog.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult DeleteReview(int? id)
+        public ActionResult DeleteReview(string id)
         {
             try
             {

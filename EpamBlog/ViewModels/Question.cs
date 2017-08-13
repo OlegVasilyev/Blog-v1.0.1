@@ -10,7 +10,7 @@ namespace EpamBlog.ViewModels
     public class Question
     {
         [Required]
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         [Required]
         [DisplayName("Question")]

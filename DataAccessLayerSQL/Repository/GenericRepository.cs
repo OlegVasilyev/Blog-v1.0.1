@@ -20,7 +20,7 @@ namespace DataAccessLayerSQL.Repositories
             context.SaveChanges();
         }
 
-        public void Delete(int Id)
+        public void Delete(string Id)
         {
             var item = context.Set<T>().Find(Id);
             if (item != null)
@@ -33,7 +33,7 @@ namespace DataAccessLayerSQL.Repositories
             return context.Set<T>().Where(predicate).ToList();
         }
 
-        public T Get(int Id)
+        public T Get(string Id)
         {
             return context.Set<T>().Find(Id);
         }

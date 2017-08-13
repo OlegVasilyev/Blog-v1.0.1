@@ -7,7 +7,7 @@ namespace EpamBlog.ViewModels
     public class Review
     {
         [Required]
-        public int Id { get; set; }
+        public string Id { get; set; }
         [Required]
         [DisplayName("Author")]
         public string Authorname { get; set; }

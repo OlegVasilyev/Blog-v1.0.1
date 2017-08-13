@@ -29,13 +29,13 @@ namespace BusinessLogicLayer.Service
             DataBase.Save();
         }
 
-        public void DeleteReview(int? Id)
+        public void DeleteReview(string Id)
         {
             if (Id == null)
                 throw new ValidationException("Id is null", "");
             if (!DataBase.Reviews.Find(x => x.Id == Id).Any())
                 throw new ValidationException("Review wasn't found", "");
-            DataBase.Reviews.Delete((int)Id);
+            DataBase.Reviews.Delete(Id);
             DataBase.Save();
         }
 

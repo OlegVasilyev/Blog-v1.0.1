@@ -33,21 +33,21 @@ namespace BusinessLogicLayer.Service
             DataBase.Save();
         }
 
-        public void DeleteQuiz(int? Id)
+        public void DeleteQuiz(string Id)
         {
             if (Id == null)
                 throw new ValidationException("Id is null", "");
             if (!DataBase.Quizes.Find(x => x.Id == Id).Any())
                 throw new ValidationException("Quiz wasn't found", "");
-            DataBase.Quizes.Delete((int)Id);
+            DataBase.Quizes.Delete(Id);
             DataBase.Save();
         }
 
-        public QuizDTO GetQuiz(int? Id)
+        public QuizDTO GetQuiz(string Id)
         {
             if (Id == null)
                 throw new ValidationException("Quiz's id wasn't set", "");
-            var quizemp = DataBase.Quizes.Get(Id.Value);
+            var quizemp = DataBase.Quizes.Get(Id);
             if (quizemp == null)
                 throw new ValidationException("Quiz wasn't found", "");
 

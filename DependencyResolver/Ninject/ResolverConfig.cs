@@ -5,7 +5,7 @@ using BusinessLogicLayer.Service;
 using BusinessLogicLayerInterfaces.Interfaces;
 using DataAccessLayerSQL.Repositories;
 using DataAccessLayerInterfaces.Repository;
-using DataAccessLayerSQL.Context;
+using DataAccessLayerMongoDB.Context;
 using AuthenticationLayerDAL.Context;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Entities.IdentityEnties;
@@ -13,7 +13,7 @@ using AuthenticationLayerBLL.Interface.Interfaces;
 using AuthenticationLayerBLL.Services;
 using AuthenticationLayerDAL.Interface.Interfaces;
 using AuthenticationLayerDAL.Repositories;
-using BusinessLogicLayer.Service;
+using DataAccessLayerSQL.Context;
 
 namespace DependencyResolver.Ninject
 {
@@ -23,6 +23,7 @@ namespace DependencyResolver.Ninject
         {
             //context
             kernel.Bind<DbContext>().To<BlogContext>().InRequestScope();
+            kernel.Bind<MongoDataConetext>().To<MongoDataConetext>().InRequestScope();
             kernel.Bind<IdentityDbContext<ApplicationUser>>().To<AuthenticationContext>();
             //repository, I know about Generic Repository but I decided to use patter UnitOfWork
             kernel.Bind<IBlogRepository>().To<BlogRepositories>();

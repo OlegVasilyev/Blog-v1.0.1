@@ -9,7 +9,7 @@ namespace BusinessLogicLayerInterfaces.Interfaces
 {
     public interface IPollService
     {
-        QuestionDTO GetQuestion(int? id);
+        QuestionDTO GetQuestion(string id);
         void UpdateAnswer(AnswerDTO answer);
     }
 }

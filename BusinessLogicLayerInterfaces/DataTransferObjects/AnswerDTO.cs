@@ -1,10 +1,13 @@
-﻿using System.ComponentModel;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using System.ComponentModel;
 
 namespace BusinessLogicLayerInterfaces.DataTransferObjects
 {
     public class AnswerDTO
     {
-        public int Id { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
         public int QuestionId { get; set; }
         public string  Text { get; set; }
         [DisplayName("Votes Count")]

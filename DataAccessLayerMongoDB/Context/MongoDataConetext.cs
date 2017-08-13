@@ -6,23 +6,18 @@ namespace DataAccessLayerMongoDB.Context
 {
     public class MongoDataConetext
     {
-        public const string CONNECTION_STRING_NAME = "Blog";
-        public const string DATABASE_NAME = "blog";
+        public const string connectionName = "Blog";
+        public const string databaseName = "EpamBlog";
 
         private static readonly IMongoClient client;
         private static readonly IMongoDatabase database;
 
         static MongoDataConetext()
         {
-            var connectionString = ConfigurationManager.ConnectionStrings[CONNECTION_STRING_NAME].ConnectionString;
+            var connectionString = "mongodb://localhost:27017";
             client = new MongoClient(connectionString);
-            database = client.GetDatabase(DATABASE_NAME);
+            database = client.GetDatabase(databaseName);
         }
-        public IMongoClient Client
-        {
-            get { return client; }
-        }
-
         /// <summary>
         /// The private GetCollection method
         /// </summary>

@@ -16,7 +16,7 @@ namespace DataAccessLayerInterfacesa.Interfaces
         /// May throw ValidationException if smth goes wrong
         /// </summary>
         /// <param name="id">Id of item to delete</param>
-        void Delete(int Id);
+        void Delete(string Id);
         /// <summary>
         /// Gets all the items of current type from db
         /// </summary>
@@ -27,6 +27,6 @@ namespace DataAccessLayerInterfacesa.Interfaces
         /// </summary>
         /// <param name="id">Id of the item to get</param>
         /// <returns>The item of current type (T)</returns>
-        T Get(int Id);
+        T Get(string Id);
     }
 }

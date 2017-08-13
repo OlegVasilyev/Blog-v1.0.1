@@ -8,10 +8,10 @@ namespace BusinessLogicLayerInterfaces.Interfaces
     /// </summary>
     public interface IArticleService
     {
-        ArticleDTO GetArticle(int? Id);
+        ArticleDTO GetArticle(string Id);
         IEnumerable<ArticleDTO> GetArticles();
         IEnumerable<ArticleDTO> GetArticles(string tag);
         void CreateArticle(ArticleDTO articleDto);
-        void DeleteArticle(int? Id);
+        void DeleteArticle(string Id);
     }
 }

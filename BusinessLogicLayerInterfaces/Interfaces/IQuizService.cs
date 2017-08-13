@@ -10,9 +10,9 @@ namespace BusinessLogicLayerInterfaces.Interfaces
         /// </summary>
         void CreateQuiz(QuizDTO quizDto);
         void SendMailResult(QuizDTO quizDto);
-        QuizDTO GetQuiz(int? Id);
+        QuizDTO GetQuiz(string Id);
         IEnumerable<QuizDTO> GetQuizs();
         void UpdateQuiz(QuizDTO quizDto);
-        void DeleteQuiz(int? Id);
+        void DeleteQuiz(string Id);
     }
 }

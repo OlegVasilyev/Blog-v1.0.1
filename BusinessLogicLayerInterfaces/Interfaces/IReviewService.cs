@@ -10,6 +10,6 @@ namespace BusinessLogicLayerInterfaces.Interfaces
     {
         IEnumerable<ReviewDTO> GetReviews();
         void CreateReview(ReviewDTO reviewDto);
-        void DeleteReview(int? Id);
+        void DeleteReview(string Id);
     }
 }
