@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Repository\IBlogRepository.cs" />
+    <Compile Include="Interfaces\IBlogRepository.cs" />
     <Compile Include="Interfaces\ICRUD.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
