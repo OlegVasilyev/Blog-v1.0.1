@@ -70,7 +70,7 @@ namespace DataAccessLayerSQL.Context
                 new Answer()
                 {
                      Id = "1",
-                     Text = "Yes",
+                     Text = "Always",
                      QuestionId = "1",
                      VotesCount = 10
 
@@ -86,7 +86,7 @@ namespace DataAccessLayerSQL.Context
                 new Answer()
                 {
                     Id = "3",
-                    Text = "No",
+                    Text = "Never",
                     QuestionId = "1",
                     VotesCount =30
                 }
