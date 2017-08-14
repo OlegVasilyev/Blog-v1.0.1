@@ -45,8 +45,6 @@ namespace BusinessLogicLayer.Service
             var answerTemp = mapper.Map<Answer>(answer);
 
             DataBase.Answers.Update(answerTemp);
-
-            DataBase.Save();
         }
     }
 }

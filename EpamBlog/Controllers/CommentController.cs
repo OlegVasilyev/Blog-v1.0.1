@@ -23,13 +23,14 @@ namespace EpamBlog.Controllers
             return PartialView("~/Views/Comment/Partials/DisplayComments.cshtml", mapper.Map<IEnumerable<Comment>>(_commentService.GetComments(id)));
         }
         [HttpPost]
-        public ActionResult CreateComment(Comment comment)
+        public ActionResult Index(Comment comment)
         {
 
             var mapper = MapperConfigWeb.GetConfigToDTO().CreateMapper();
 
             try
             {
+                comment.Id = Guid.NewGuid().ToString();
                 comment.Date = DateTime.UtcNow;
                 comment.User = User.Identity.Name;
                 var reviewDto = mapper.Map<CommentDTO>(comment);

@@ -46,6 +46,7 @@ namespace EpamBlog.Areas.Admin.Controllers
 
             try
             {
+                article.Id = Guid.NewGuid().ToString();
                 article.Date = DateTime.UtcNow;
                 if (article.Tags != null && article.Tags.Count > 0)
                 {

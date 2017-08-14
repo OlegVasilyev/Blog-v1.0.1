@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Entities.Models
@@ -9,6 +11,7 @@ namespace Entities.Models
         public string Surname { get; set; }
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
+        [BsonRepresentation(BsonType.DateTime)]
         public DateTime DateBirt { get; set; }
         public string Sex { get; set; }
         public string NumberTelephone { get; set; }

@@ -1,12 +1,15 @@
 ﻿@model EpamBlog.ViewModels.Comment
 
-@using (Ajax.BeginForm("CreateComment", "Comment", new AjaxOptions { UpdateTargetId = "comment_target" }))
+@using (Ajax.BeginForm("Index", "Comment", new AjaxOptions { UpdateTargetId = "comment_target" }))
 {
     <div class="row">
         <div class="input-field col s10 push-s1">
             @Html.LabelFor(model => model.Text, "Comment:")
             <textarea class="materialize-textarea" cols="20" id="comment_text" name="Text" required="required" rows="2"></textarea>
            @Html.ValidationMessageFor(model => model.Text, "", new { @class = "text-danger" })
+        </div>
+        <div>
+            <input hidden="hidden" name="IdArticle" value="@Model.IdArticle"/>
         </div>
         <div class="input-field col s10 push-s1">
             <input type="submit" value="Send" class="btn btn-default" />

@@ -43,13 +43,8 @@ namespace BusinessLogicLayer.Service
 
         public IEnumerable<CommentDTO> GetComments(string Id)
         {
-            var article = DataBase.Articles.Get(Id);
-            if (article == null)
-                return null;
-
             var mapper = MapperConfig.GetConfigToDTO().CreateMapper();
-            return mapper.Map<IEnumerable<CommentDTO>>(article.Comments);
-
+            return mapper.Map<IEnumerable<CommentDTO>>(DataBase.Comments.Find(x=>x.IdArticle==Id));
         }
 
         public void UpdateComment(CommentDTO commentDto)

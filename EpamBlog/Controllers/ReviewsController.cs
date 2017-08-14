@@ -32,6 +32,7 @@ namespace EpamBlog.Controllers
 
             try
             {
+                review.Id = Guid.NewGuid().ToString();
                 review.Date = DateTime.UtcNow;
                 var reviewDto = mapper.Map<ReviewDTO>(review);
                 _reviewService.CreateReview(reviewDto);

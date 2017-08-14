@@ -45,8 +45,12 @@ namespace DataAccessLayerSQL.Repositories
 
         public void Update(T item)
         {
-            context.Entry(item).CurrentValues.SetValues(item);
-            context.SaveChanges();
+            try
+            {
+                context.Entry<T>(item).State = EntityState.Modified;
+                context.SaveChanges();
+            }
+            catch (Exception e) { Console.WriteLine(e.Message); }
         }
     }
 }
